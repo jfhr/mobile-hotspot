@@ -18,6 +18,8 @@ DIS | 01:23:45:67:89:ab | DeviceName | 192.168.1.2
 Stopping hotspot ...
 ```
 
+The start and end messages are written to stderr, the lines in the middle are written to stdout.
+
 The general output format looks like this:
 
 `<code> | <mac> | <host1>[ | <host2>] ...`

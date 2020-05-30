@@ -22,14 +22,14 @@ namespace MobileHotspot
             hotspot.ClientConnected += (_, clientInfo) => Console.WriteLine($"CON | {ToString(clientInfo)}");
             hotspot.ClientDisconnected += (_, clientInfo) => Console.WriteLine($"DIS | {ToString(clientInfo)}");
 
-            Console.WriteLine("Starting hotspot ... press \"q\" and Enter to quit");
+            Console.Error.WriteLine("Starting hotspot ... press \"q\" and Enter to quit");
 
             var hotspotTask = hotspot.RunAsync(cancellationTokenSource.Token);
 
             // wait for 'q'
             while (Convert.ToChar(Console.Read()) != 'q') ;
 
-            Console.WriteLine("Stopping hotspot ...");
+            Console.Error.WriteLine("Stopping hotspot ...");
             cancellationTokenSource.Cancel();
             hotspotTask.GetAwaiter().GetResult();
         }
