@@ -19,8 +19,14 @@ namespace MobileHotspot
 
             var hotspot = await HotspotManager.CreateAsync(args[0], args[1]);
 
-            hotspot.ClientConnected += (_, clientInfo) => Console.WriteLine($"CON | {ToString(clientInfo)}");
-            hotspot.ClientDisconnected += (_, clientInfo) => Console.WriteLine($"DIS | {ToString(clientInfo)}");
+            hotspot.ClientConnected += (_, clientInfo) =>
+            {
+                Console.WriteLine($"CON | {ToString(clientInfo)}");
+            };
+            hotspot.ClientDisconnected += (_, clientInfo) =>
+            {
+                Console.WriteLine($"DIS | {ToString(clientInfo)}");
+            };
 
             Console.Error.WriteLine("Starting hotspot ... press \"q\" and Enter to quit");
 

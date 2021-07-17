@@ -8,7 +8,7 @@ namespace MobileHotspot
     /// </summary>
     public class ClientComparer : IEqualityComparer<NetworkOperatorTetheringClient>
     {
-        public bool Equals(NetworkOperatorTetheringClient x, NetworkOperatorTetheringClient y) => x.MacAddress == y.MacAddress;
+        public bool Equals(NetworkOperatorTetheringClient x, NetworkOperatorTetheringClient y) => x?.MacAddress == y?.MacAddress;
 
         public int GetHashCode(NetworkOperatorTetheringClient obj) => obj.MacAddress.GetHashCode();
     }
